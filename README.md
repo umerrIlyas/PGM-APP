@@ -7,7 +7,7 @@ A monorepo project combining a **Next.js** frontend and a **Laravel** backend, o
 | Layer        | Tech                                           |
 | ------------ | ---------------------------------------------- |
 | Frontend     | Next.js 15 (App Router), React 19, TypeScript  |
-| Backend      | Laravel 11, PHP 8.3                            |
+| Backend      | Laravel 13.7, PHP 8.3                            |
 | Database     | MySQL 8.4                                      |
 | Cache/Queue  | Redis 7                                        |
 | Monorepo     | Turborepo + pnpm workspaces                    |

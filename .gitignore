@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+vendor/
+
+# Build output
+dist/
+build/
+.next/
+out/
+.turbo/
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+storage/logs/*
+
+# IDE / OS
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Laravel
+apps/api/storage/*.key
+apps/api/.phpunit.result.cache
+apps/api/bootstrap/cache/*.php
+apps/api/storage/framework/cache/data/*
+apps/api/storage/framework/sessions/*
+apps/api/storage/framework/views/*
+apps/api/storage/app/public/*
+
+# Docker
+docker/data/
+
+# Misc
+coverage/
+.eslintcache

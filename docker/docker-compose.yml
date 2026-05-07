@@ -1,0 +1,51 @@
+name: pgm-app
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/api.Dockerfile
+      target: dev
+    container_name: pgm-api
+    working_dir: /var/www/html
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../apps/api:/var/www/html
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  mysql:
+    image: mysql:8.4
+    container_name: pgm-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootsecret
+      MYSQL_DATABASE: pgm_app
+      MYSQL_USER: pgm_app
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-prootsecret"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: pgm-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  mysql_data:
+  redis_data:

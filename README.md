@@ -18,12 +18,12 @@ A monorepo project combining a **Next.js** frontend and a **Laravel** backend, o
 ```
 pgm-app/
 ├── apps/
-│   ├── web/                 # Next.js frontend (@my-app/web)
-│   └── api/                 # Laravel backend (@my-app/api) — bootstrapped via composer
+│   ├── web/                 # Next.js frontend (@pgm/web)
+│   └── api/                 # Laravel backend (@pgm/api) — bootstrapped via composer
 ├── packages/
-│   ├── ui/                  # Shared React components (@my-app/ui)
-│   ├── config/              # Shared eslint + tsconfig presets (@my-app/config)
-│   └── utils/               # Shared TS helpers (@my-app/utils)
+│   ├── ui/                  # Shared React components (@pgm/ui)
+│   ├── config/              # Shared eslint + tsconfig presets (@pgm/config)
+│   └── utils/               # Shared TS helpers (@pgm/utils)
 ├── docker/
 │   ├── docker-compose.yml   #  api + mysql + redis
 │   └── api.Dockerfile
